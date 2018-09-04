@@ -71,7 +71,7 @@ public class EmployeeController {
       return new ResponseEntity<>(employeeService.getList(), HttpStatus.CREATED);
     } catch (Exception e) {
       e.printStackTrace();
-      logger.info("error occurred while creating transaction");
+      logger.info("error occurred while creating employee");
       return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY); // 422
     }
   }
@@ -103,7 +103,7 @@ public class EmployeeController {
 
       return new ResponseEntity<>(list, HttpStatus.OK);
     } catch (Exception e) {
-      logger.info("error occurred while creating transaction");
+      logger.info("error occurred while updating employee");
       return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY); // 422
     }
   }
@@ -119,7 +119,7 @@ public class EmployeeController {
 
       return new ResponseEntity<>(HttpStatus.OK);
     } catch (Exception e) {
-      logger.info("error occurred while creating transaction");
+      logger.info("error occurred while deleting employee");
       return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY); // 422
     }
   }
@@ -136,7 +136,7 @@ public class EmployeeController {
       return new ResponseEntity<>(
           employeeService.filterByAge(operator, value, sort), HttpStatus.OK);
     } catch (Exception e) {
-      logger.info("error occurred while creating transaction");
+      logger.info("error occurred while filtering");
       return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY); // 422
     }
   }
