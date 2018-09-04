@@ -109,7 +109,7 @@ public class EmployeeService {
         return empMap
             .stream()
             .map(emp -> new Employee(emp))
-            .filter(employee -> employee.getAge() <= value)
+            .filter(employee -> employee.getAge() >= value)
             .sorted(comparator)
             .collect(Collectors.toList());
       case "eq":
